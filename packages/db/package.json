@@ -25,6 +25,7 @@
     "@atena/eslint-config": "workspace:^0.2.0",
     "@atena/prettier-config": "workspace:^0.1.0",
     "@atena/tsconfig": "workspace:^0.1.0",
+    "@types/pg": "^8.11.2",
     "dotenv-cli": "^7.3.0",
     "drizzle-kit": "^0.20.14",
     "eslint": "^8.57.0",
