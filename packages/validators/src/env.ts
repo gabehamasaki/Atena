@@ -17,6 +17,12 @@ export const env = createEnv({
     DB_NAME: z.string(),
     DB_PASSWORD: z.string(),
     DB_USERNAME: z.string(),
+    AUTH_DISCORD_ID: z.string().min(1),
+    AUTH_DISCORD_SECRET: z.string().min(1),
+    AUTH_SECRET:
+      process.env.NODE_ENV === "production"
+        ? z.string().min(1)
+        : z.string().min(1).optional(),
   },
   /**
    * Specify your client-side environment variables schema here.
@@ -39,3 +45,5 @@ export const env = createEnv({
     !!process.env.SKIP_ENV_VALIDATION ||
     process.env.npm_lifecycle_event === "lint",
 });
+
+export default env;

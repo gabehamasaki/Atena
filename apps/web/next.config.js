@@ -4,8 +4,7 @@ import _jiti from "jiti";
 const jiti = _jiti(fileURLToPath(import.meta.url));
 
 // Import env files to validate at build time. Use jiti so we can load .ts files in here.
-jiti("./src/env");
-jiti("@atena/auth/env");
+jiti("@atena/validators/env");
 
 /** @type {import("next").NextConfig} */
 const config = {
