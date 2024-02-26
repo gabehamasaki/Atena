@@ -9,7 +9,7 @@ export { pgTable as tableCreator } from 'drizzle-orm/pg-core'
 
 export * from "drizzle-orm";
 
-const URL = `postgresql://${env.DB_USERNAME}:${env.DB_PASSWORD}@${env.DB_HOST}/${env.DB_NAME}`;
+const URL = `postgresql://${env.DB_USERNAME}:${env.DB_PASSWORD}@${env.DB_HOST}/${env.DB_NAME}${env.NODE_ENV == 'production' ?? '?sslmode=require'}`;
 
 const client = new Client({
   connectionString: URL,
