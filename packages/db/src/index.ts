@@ -1,11 +1,12 @@
-import { Client } from 'pg';
-import { drizzle } from 'drizzle-orm/node-postgres';
+import { drizzle } from "drizzle-orm/node-postgres";
+import { Client } from "pg";
 
-import * as auth from "./schema/auth";
 import { env } from "@atena/validators";
 
+import * as auth from "./schema/auth";
+
 export const schema = { ...auth };
-export { pgTable as tableCreator } from 'drizzle-orm/pg-core'
+export { pgTable as tableCreator } from "drizzle-orm/pg-core";
 
 export * from "drizzle-orm";
 
@@ -16,7 +17,5 @@ const client = new Client({
 });
 
 export const db = drizzle(client, {
-  schema
+  schema,
 });
-
-

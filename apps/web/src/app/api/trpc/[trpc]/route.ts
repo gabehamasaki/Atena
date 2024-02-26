@@ -3,7 +3,6 @@ import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 import { appRouter, createTRPCContext } from "@atena/api";
 import { auth } from "@atena/auth";
 
-
 /**
  * Configure basic CORS headers
  * You should extend this to match your needs

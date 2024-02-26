@@ -2,11 +2,11 @@ import { relations, sql } from "drizzle-orm";
 import {
   index,
   numeric,
+  pgTable,
   primaryKey,
   text,
   timestamp,
   varchar,
-  pgTable
 } from "drizzle-orm/pg-core";
 
 export const users = pgTable("user", {

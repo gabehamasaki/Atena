@@ -5,8 +5,8 @@ import { GeistSans } from "geist/font/sans";
 import { cn } from "@atena/ui";
 import { ThemeProvider, ThemeToggle } from "@atena/ui/theme";
 import { Toaster } from "@atena/ui/toast";
-
 import { env } from "@atena/validators";
+
 import { TRPCReactProvider } from "~/trpc/react";
 
 import "~/app/globals.css";
