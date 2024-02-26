@@ -1,21 +1,22 @@
-import { neon } from '@neondatabase/serverless';
-import { drizzle } from 'drizzle-orm/neon-http';
+import { Client } from 'pg';
+import { drizzle } from 'drizzle-orm/node-postgres';
 
 import * as auth from "./schema/auth";
 import * as post from "./schema/post";
 import { env } from "@atena/validators";
 
 export const schema = { ...auth, ...post };
+export { pgTable as tableCreator } from 'drizzle-orm/pg-core'
 
 export * from "drizzle-orm";
 
-const URL = `
-  postgresql://${env.DB_USERNAME}:${env.DB_PASSWORD}@${env.DB_HOST}/${env.DB_NAME}?sslmode=require
-`;
+const URL = `postgresql://${env.DB_USERNAME}:${env.DB_PASSWORD}@${env.DB_HOST}/${env.DB_NAME}`;
 
-const sql = neon(URL);
+const client = new Client({
+  connectionString: URL,
+});
 
-export const db = drizzle(sql, {
+export const db = drizzle(client, {
   schema
 });
 
