@@ -1,5 +1,5 @@
 {
-  "name": "@atena/nextjs",
+  "name": "@atena/web",
   "version": "0.1.0",
   "private": true,
   "type": "module",

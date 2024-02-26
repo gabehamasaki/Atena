@@ -1,4 +1,0 @@
-{
-  "extends": "@atena/tsconfig/base.json",
-  "include": ["routes"]
-}
