@@ -12,3 +12,6 @@ runs:
 
     - shell: bash
       run: pnpm add -g turbo
+
+    - shell: bash
+      run: pnpm install
