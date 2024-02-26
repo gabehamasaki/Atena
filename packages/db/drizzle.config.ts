@@ -9,5 +9,5 @@ export default {
   schema: "./src/schema",
   driver: "pg",
   dbCredentials: { connectionString: uri },
-  tablesFilter: ["t3turbo_*"],
+  tablesFilter: ["*"],
 } satisfies Config;

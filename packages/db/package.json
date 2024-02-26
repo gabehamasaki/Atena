@@ -18,9 +18,8 @@
   },
   "dependencies": {
     "@atena/validators": "workspace:^",
-    "@neondatabase/serverless": "^0.8.1",
-    "@planetscale/database": "^1.16.0",
-    "drizzle-orm": "^0.29.4"
+    "drizzle-orm": "^0.29.4",
+    "pg": "^8.11.3"
   },
   "devDependencies": {
     "@atena/eslint-config": "workspace:^0.2.0",
