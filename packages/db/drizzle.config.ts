@@ -1,20 +1,13 @@
+import { env } from "@atena/validators";
 import type { Config } from "drizzle-kit";
 
-const uri = [
-  "mysql://",
-  process.env.DB_USERNAME,
-  ":",
-  process.env.DB_PASSWORD,
-  "@",
-  process.env.DB_HOST,
-  ":3306/",
-  process.env.DB_NAME,
-  '?ssl={"rejectUnauthorized":true}',
-].join("");
+const uri = `
+postgresql://${env.DB_USERNAME}:${env.DB_PASSWORD}@${env.DB_HOST}/${env.DB_NAME}?sslmode=require
+`;
 
 export default {
   schema: "./src/schema",
-  driver: "mysql2",
-  dbCredentials: { uri },
+  driver: "pg",
+  dbCredentials: { connectionString: uri },
   tablesFilter: ["t3turbo_*"],
 } satisfies Config;

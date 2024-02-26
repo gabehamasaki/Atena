@@ -1,19 +1,22 @@
-import { Client } from "@planetscale/database";
-import { drizzle } from "drizzle-orm/planetscale-serverless";
+import { neon } from '@neondatabase/serverless';
+import { drizzle } from 'drizzle-orm/neon-http';
 
 import * as auth from "./schema/auth";
 import * as post from "./schema/post";
+import { env } from "@atena/validators";
 
 export const schema = { ...auth, ...post };
 
-export { mySqlTable as tableCreator } from "./schema/_table";
-
 export * from "drizzle-orm";
 
-const psClient = new Client({
-  host: process.env.DB_HOST!,
-  username: process.env.DB_USERNAME!,
-  password: process.env.DB_PASSWORD!,
+const URL = `
+  postgresql://${env.DB_USERNAME}:${env.DB_PASSWORD}@${env.DB_HOST}/${env.DB_NAME}?sslmode=require
+`;
+
+const sql = neon(URL);
+
+export const db = drizzle(sql, {
+  schema
 });
 
-export const db = drizzle(psClient, { schema });
+
