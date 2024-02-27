@@ -8,7 +8,7 @@ import { env } from "@atena/validators";
 
 import { TRPCReactProvider } from "~/trpc/react";
 
-import "~/app/globals.css";
+import "@atena/ui/global.css";
 import { cn } from "@atena/ui";
 
 export const metadata: Metadata = {
