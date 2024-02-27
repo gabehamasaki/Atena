@@ -19,7 +19,8 @@
   "dependencies": {
     "@atena/validators": "workspace:^",
     "drizzle-orm": "^0.29.4",
-    "pg": "^8.11.3"
+    "pg": "^8.11.3",
+    "postgres": "^3.4.3"
   },
   "devDependencies": {
     "@atena/eslint-config": "workspace:^0.2.0",
