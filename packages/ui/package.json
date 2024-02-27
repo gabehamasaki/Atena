@@ -5,9 +5,9 @@
   "type": "module",
   "exports": {
     ".": "./src/lib/utils.ts",
-    "./*": "./src/components/ui/*.tsx",
-    "./hooks": "./src/components/ui/*.ts",
-    "./global.css": "./src/global.css"
+    "./*": "./src/components/*.tsx",
+    "./hooks": "./src/components/*.ts",
+    "./styles.css": "./src/styles.css"
   },
   "license": "MIT",
   "scripts": {
