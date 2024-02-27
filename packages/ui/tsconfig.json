@@ -1,7 +1,11 @@
 {
   "extends": "@atena/tsconfig/base.json",
   "compilerOptions": {
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+    "paths": {
+      "@/components/*": ["./src/components/*"],
+      "@/lib/*": ["./src/lib/*"],
+    }
   },
   "include": ["*.ts", "src"],
   "exclude": ["node_modules"]

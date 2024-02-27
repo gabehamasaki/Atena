@@ -14,6 +14,7 @@ const config = {
   parserOptions: { project: true },
   plugins: ["@typescript-eslint", "import"],
   rules: {
+    "@typescript-eslint/no-unsafe-assignment": "off",
     "turbo/no-undeclared-env-vars": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",
