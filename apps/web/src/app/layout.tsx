@@ -3,7 +3,7 @@ import "@atena/ui/styles.css";
 import type { Metadata, Viewport } from "next";
 import { Inter } from 'next/font/google'
 
-import { ThemeProvider, ThemeToggle } from "@atena/ui/theme";
+import { ThemeProvider } from "@atena/ui/theme";
 import { Toaster } from "@atena/ui/sonner";
 import { env } from "@atena/validators";
 
@@ -43,9 +43,6 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <TRPCReactProvider>{props.children}</TRPCReactProvider>
-          <div className="absolute bottom-4 right-4">
-            <ThemeToggle />
-          </div>
           <Toaster />
         </ThemeProvider>
       </body>
