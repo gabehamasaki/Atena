@@ -16,7 +16,13 @@ export const metadata: Metadata = {
       ? "https://atena.gabrielhamasaki.engineer"
       : "http://localhost:3000",
   ),
-  title: "Atena.IO",
+  icons: {
+    icon: '/favicon.ico',
+  },
+  title: {
+    default: 'dasboard',
+    template: "%s - Atena.IO"
+  },
   description: "Project Atena",
   openGraph: {
     title: "Atena.IO",
