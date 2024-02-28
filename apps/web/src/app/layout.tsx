@@ -1,14 +1,13 @@
+import "@atena/ui/styles.css";
+
 import type { Metadata, Viewport } from "next";
-import { GeistMono } from "geist/font/mono";
-import { GeistSans } from "geist/font/sans";
+import { Inter } from 'next/font/google'
 
 import { ThemeProvider, ThemeToggle } from "@atena/ui/theme";
 import { Toaster } from "@atena/ui/sonner";
 import { env } from "@atena/validators";
 
 import { TRPCReactProvider } from "~/trpc/react";
-
-import "@atena/ui/styles.css";
 import { cn } from "@atena/ui";
 
 export const metadata: Metadata = {
@@ -33,12 +32,14 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
 };
+const inter = Inter({ subsets: ['latin'] })
+
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={cn("min-h-screen bg-background font-sans text-foreground antialiased", GeistMono.className, GeistSans.className)}
+        className={cn(inter.className ,"min-h-screen bg-background text-foreground")}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <TRPCReactProvider>{props.children}</TRPCReactProvider>
