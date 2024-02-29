@@ -1,30 +1,26 @@
+"use client";
 
-'use client';
-
-import { useTheme } from '@atena/ui/theme';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from "react";
 
 interface Props {
 	speedFactor?: number;
 	starCount?: number;
+	backgroundColor?: string;
+	starColor?: [number, number, number];
 }
 
 export default function Starfield(props: Props) {
-	const { theme } = useTheme();
-	const { speedFactor = 0.05, starCount = 5000 } = props;
-	const [backgroundColor, setBackgroundColor] = useState('')
-	const [starColor, setStarColor] = useState([0, 0, 0])
-
+	const {
+		speedFactor = 0.05,
+		backgroundColor = "black",
+		starColor = [255, 255, 255],
+		starCount = 2500,
+	} = props;
 	useEffect(() => {
-		setBackgroundColor(theme === "dark" ? 'black' : 'white')
-		setStarColor(theme === "dark" ? [255, 255, 255] : [0, 0, 0])
-	}, [theme])
-
-	useEffect(() => {
-		const canvas = document.getElementById('starfield') as HTMLCanvasElement;
+		const canvas = document.getElementById("starfield") as HTMLCanvasElement;
 
 		if (canvas) {
-			const c = canvas.getContext('2d');
+			const c = canvas.getContext("2d");
 
 			if (c) {
 				let w = window.innerWidth;
@@ -63,7 +59,15 @@ export default function Starfield(props: Props) {
 
 				const putPixel = (x: number, y: number, brightness: number) => {
 					const rgb =
-						'rgba(' + starColor[0] + ',' + starColor[1] + ',' + starColor[2] + ',' + brightness + ')';
+						"rgba(" +
+						starColor[0] +
+						"," +
+						starColor[1] +
+						"," +
+						starColor[2] +
+						"," +
+						brightness +
+						")";
 					c.fillStyle = rgb;
 					c.fillRect(x, y, 1, 1);
 				};
@@ -119,13 +123,13 @@ export default function Starfield(props: Props) {
 				requestAnimationFrame(init);
 
 				// add window resize listener:
-				window.addEventListener('resize', function () {
+				window.addEventListener("resize", function() {
 					w = window.innerWidth;
 					h = window.innerHeight;
 					setCanvasExtents();
 				});
 			} else {
-				console.error('Could not get 2d context from canvas element');
+				console.error("Could not get 2d context from canvas element");
 			}
 		} else {
 			console.error('Could not find canvas element with id "starfield"');
@@ -142,15 +146,15 @@ export default function Starfield(props: Props) {
 			style={{
 				padding: 0,
 				margin: 0,
-				position: 'fixed',
+				position: "fixed",
 				top: 0,
 				right: 0,
 				bottom: 0,
 				left: 0,
 				zIndex: 10,
 				opacity: 1,
-				pointerEvents: 'none',
-				mixBlendMode: 'screen',
+				pointerEvents: "none",
+				mixBlendMode: "screen",
 			}}
 		></canvas>
 	);

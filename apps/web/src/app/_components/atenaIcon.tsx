@@ -1,19 +1,47 @@
-"use client"
-import { useTheme } from "@atena/ui/theme"
-import Image from "next/image"
+import Image from "next/image";
+import Logo from "public/atena-dark.svg";
+import LogoLight from "public/atena-light.svg";
+import Brand from "public/brand-dark.svg";
+import BrandLight from "public/brand-light.svg";
 
 export function AtenaBrand() {
-  const { theme } = useTheme()
-  return (
-    <Image src={
-      theme === 'dark' ? '/brand-dark.svg' : '/brand-light.svg'
-    } alt="Atena" width={28} height={28}/>
-  )
+	return (
+		<>
+			<Image
+				src={Brand}
+				className="hidden dark:block"
+				alt="Atena"
+				width={28}
+				height={28}
+			/>
+			<Image
+				src={BrandLight}
+				className="block dark:hidden"
+				alt="Atena"
+				width={28}
+				height={28}
+			/>
+		</>
+	);
 }
 
 export function AtenaLogo() {
-  const { theme } = useTheme()
-  return (
-    <Image src={theme === 'dark' ? '/atena-dark.svg' : '/atena-light.svg'} alt="Atena" width={512} height={328}/>
-  )
+	return (
+		<>
+			<Image
+				src={Logo}
+				className="hidden dark:block"
+				alt="Atena"
+				width={512}
+				height={328}
+			/>
+			<Image
+				src={LogoLight}
+				className="block dark:hidden"
+				alt="Atena"
+				width={512}
+				height={328}
+			/>
+		</>
+	);
 }
