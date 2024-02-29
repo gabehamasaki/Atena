@@ -11,15 +11,15 @@ export function AtenaBrand() {
 				src={Brand}
 				className="hidden dark:block"
 				alt="Atena"
-				width={28}
-				height={28}
+				width={24}
+				height={24}
 			/>
 			<Image
 				src={BrandLight}
 				className="block dark:hidden"
 				alt="Atena"
-				width={28}
-				height={28}
+				width={24}
+				height={24}
 			/>
 		</>
 	);

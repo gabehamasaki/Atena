@@ -1,10 +1,17 @@
+import type { Metadata } from "next";
 import Header from "./_components/header";
 
-export default function DashboardLayout(props: { children: React.ReactNode }) {
+export const metadata: Metadata = {
+	title: "Dasboard",
+};
+
+export default function LoginLayout(props: { children: React.ReactNode }) {
 	return (
-		<body>
+		<div className="flex min-h-screen flex-col">
 			<Header />
-			<main className="flex-1">{props.children}</main>
-		</body>
+			<div className="flex flex-1 flex-col gap-4 p-8 pt-6">
+				{props.children}
+			</div>
+		</div>
 	);
 }

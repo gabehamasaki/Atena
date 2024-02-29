@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 		icon: "/favicon.ico",
 	},
 	title: {
-		default: "dasboard",
-		template: "%s - Atena.IO",
+		template: "%s - Atena",
+		absolute: "Atena",
 	},
 	description: "Project Atena",
 	openGraph: {
@@ -38,7 +38,7 @@ export const viewport: Viewport = {
 		{ media: "(prefers-color-scheme: dark)", color: "black" },
 	],
 };
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export default function RootLayout(props: { children: React.ReactNode }) {
 	return (
@@ -46,7 +46,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
 			<body
 				className={cn(
 					inter.className,
-					"min-h-screen bg-background text-foreground",
+					"antialiased min-h-screen bg-background text-foreground",
 				)}
 			>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
