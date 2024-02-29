@@ -55,33 +55,5 @@ export const authConfig = {
 
       return session
     },
-    authorized({ auth, request: { nextUrl } }) {
-      const isLoggedIn = !!auth?.user
-
-      const isOnPublicPages = nextUrl.pathname.startsWith('/auth')
-      const isOnWebhooks = nextUrl.pathname.startsWith('/api/webhooks')
-      const isOnPublicAPIRoutes = nextUrl.pathname.startsWith('/api/auth')
-      const isOnAPIRoutes = nextUrl.pathname.startsWith('/api')
-      const isOnPrivatePages = !isOnPublicPages
-
-      if (isOnWebhooks || isOnPublicAPIRoutes) {
-        return true
-      }
-
-      if (isOnPublicPages && isLoggedIn) {
-        return Response.redirect(new URL('/', nextUrl))
-      }
-
-      if (isOnAPIRoutes && !isLoggedIn) {
-        return Response.json({ message: 'Unauthorized.' }, { status: 401 })
-      }
-
-      if (isOnPrivatePages && !isLoggedIn) {
-        // Redirect user back to sign in
-        return false
-      }
-
-      return true
-    },
   }
 } satisfies NextAuthConfig
