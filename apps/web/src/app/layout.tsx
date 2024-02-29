@@ -48,10 +48,13 @@ export default function RootLayout(props: { children: React.ReactNode }) {
         className={cn(inter.className ,"min-h-screen bg-background text-foreground")}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <TRPCReactProvider>{props.children}</TRPCReactProvider>
+          <TRPCReactProvider>
+            {props.children}
+          </TRPCReactProvider>
           <Toaster />
         </ThemeProvider>
       </body>
     </html>
   );
 }
+ 

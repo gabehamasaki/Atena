@@ -39,4 +39,5 @@ function ThemeToggle() {
   );
 }
 
+export { useTheme } from 'next-themes'
 export { ThemeProvider, ThemeToggle };

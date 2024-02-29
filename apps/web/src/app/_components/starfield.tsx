@@ -1,17 +1,24 @@
 
 'use client';
 
-import React, { useEffect } from 'react';
+import { useTheme } from '@atena/ui/theme';
+import React, { useEffect, useState } from 'react';
 
 interface Props {
 	speedFactor?: number;
-	backgroundColor?: string;
-	starColor?: [number, number, number];
 	starCount?: number;
 }
 
 export default function Starfield(props: Props) {
-	const { speedFactor = 0.05, backgroundColor = 'black', starColor = [255, 255, 255], starCount = 5000 } = props;
+	const { theme } = useTheme();
+	const { speedFactor = 0.05, starCount = 5000 } = props;
+	const [backgroundColor, setBackgroundColor] = useState('')
+	const [starColor, setStarColor] = useState([0, 0, 0])
+
+	useEffect(() => {
+		setBackgroundColor(theme === "dark" ? 'black' : 'white')
+		setStarColor(theme === "dark" ? [255, 255, 255] : [0, 0, 0])
+	}, [theme])
 
 	useEffect(() => {
 		const canvas = document.getElementById('starfield') as HTMLCanvasElement;

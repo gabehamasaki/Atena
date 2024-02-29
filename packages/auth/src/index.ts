@@ -26,7 +26,6 @@ export const {
   callbacks: {
     session: (opts) => {
       if (!("user" in opts)) throw "unreachable with session strategy";
-
       return {
         ...opts.session,
         user: {
