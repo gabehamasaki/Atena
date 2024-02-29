@@ -3,11 +3,11 @@ import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
   const session = request.cookies.get('authjs.session-token') ?? request.cookies.get('__Secure-authjs.session-token');
-  if (!session && !request.nextUrl.pathname.startsWith('/login')) {
-    return NextResponse.redirect(new URL('/login', request.url));
+  if (!session && !request.nextUrl.pathname.startsWith('/auth/sign-in')) {
+    return NextResponse.redirect(new URL('/auth/sign-in', request.url));
   }
 
-  if (session && request.nextUrl.pathname.startsWith('/login')) {
+  if (session && request.nextUrl.pathname.startsWith('/auth/sign-in')) {
     return NextResponse.redirect(new URL('/', request.url))
   }
 

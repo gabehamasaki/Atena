@@ -1,8 +1,8 @@
 import { Separator } from "@atena/ui/separator";
 import { ThemeToggle } from "@atena/ui/theme";
-import { AtenaBrand } from "~/app/_components/atenaIcon";
 import MenuLink from "./menu-link";
 import AvatarMenu from "./avatar";
+import { AtenaBrand } from "../atenaIcon";
 
 export default function Header() {
 	return (

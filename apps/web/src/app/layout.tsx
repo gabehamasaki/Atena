@@ -7,7 +7,7 @@ import { ThemeProvider } from "@atena/ui/theme";
 import { Toaster } from "@atena/ui/sonner";
 import { env } from "@atena/validators";
 
-import { TRPCReactProvider } from "~/trpc/react";
+import { TRPCReactProvider } from "@/trpc/react";
 import { cn } from "@atena/ui";
 
 export const metadata: Metadata = {
