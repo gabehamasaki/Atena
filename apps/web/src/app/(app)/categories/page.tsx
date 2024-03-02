@@ -1,5 +1,10 @@
+import type { Metadata } from "next";
 import CreateCategory from "./create-category-dialog";
 import CategoriesTable from "./table-categories";
+
+export const metadata: Metadata = {
+	title: "Categories",
+};
 
 export default function HomePage() {
 	return (
