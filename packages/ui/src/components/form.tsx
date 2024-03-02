@@ -4,12 +4,17 @@ import { Slot } from "@radix-ui/react-slot"
 import type {
   ControllerProps,
   FieldPath,
-  FieldValues} from "react-hook-form";
+  FieldValues
+} from "react-hook-form";
 import {
   Controller,
   FormProvider,
   useFormContext,
+  useForm
 } from "react-hook-form"
+export {
+  zodResolver
+} from "@hookform/resolvers/zod"
 
 import { cn } from "../lib/utils"
 import { Label } from "./label"
@@ -166,6 +171,7 @@ const FormMessage = React.forwardRef<
 FormMessage.displayName = "FormMessage"
 
 export {
+  useForm,
   useFormField,
   Form,
   FormItem,

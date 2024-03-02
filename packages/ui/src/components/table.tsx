@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Loader2 } from 'lucide-react';
 
 import { cn } from "../lib/utils"
 
@@ -108,6 +109,31 @@ const TableCaption = React.forwardRef<
 ))
 TableCaption.displayName = "TableCaption"
 
+interface TableEmptyRowProps {
+  colSpan: number
+  message: string
+}
+const TableEmptyRow = ({ colSpan, message }: TableEmptyRowProps) => (
+  <TableCell colSpan={colSpan}>
+    <div className='flex items-center justify-center'>
+      <p className="text-center">{message}</p>
+    </div>
+  </TableCell>
+);
+
+interface TableLoadingRowProps {
+  colSpan: number
+}
+const TableLoadingRow = ({ colSpan }: TableLoadingRowProps) => (
+  <TableRow>
+    <TableCell colSpan={colSpan}>
+      <div className='flex items-center justify-center'>
+        <Loader2 className="h-8 w-8 animate-spin text-center overflow-hidden" />
+      </div>
+    </TableCell>
+  </TableRow>
+);
+
 export {
   Table,
   TableHeader,
@@ -115,6 +141,8 @@ export {
   TableFooter,
   TableHead,
   TableRow,
+  TableEmptyRow,
+  TableLoadingRow,
   TableCell,
   TableCaption,
 }

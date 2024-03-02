@@ -13,7 +13,7 @@ export default function Header() {
 					<Separator orientation="vertical" className="h-6" />
 					<nav className="flex items-center space-x-2 lg:space-x-3">
 						<MenuLink href="/">Dashboard</MenuLink>
-						<MenuLink href="/services">Services</MenuLink>
+						<MenuLink href="/categories">Categories</MenuLink>
 					</nav>
 				</div>
 				<div className="flex items-center gap-4">
