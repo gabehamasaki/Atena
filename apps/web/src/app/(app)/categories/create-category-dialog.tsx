@@ -45,7 +45,7 @@ export default function CreateCategory() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button>New Category</Button>
+        <Button variant="outline">New Category</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
@@ -73,8 +73,8 @@ export default function CreateCategory() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Color</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Color of the category tag..." {...field} />
+                  <FormControl className="w-16">
+                    <Input type="color" className="rounded-full" placeholder="Color of the category tag..." {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

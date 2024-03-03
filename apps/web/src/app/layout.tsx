@@ -46,7 +46,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
 			<body
 				className={cn(
 					inter.className,
-					"antialiased min-h-screen bg-background text-foreground",
+					"antialiased min-h-screen bg-background text-foreground transition-colors",
 				)}
 			>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>

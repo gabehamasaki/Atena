@@ -2,7 +2,6 @@
 import { Table, TableBody, TableCell, TableEmptyRow, TableHead, TableHeader, TableLoadingRow, TableRow } from '@atena/ui/table'
 import { api } from "@/trpc/react";
 import { Button } from '@atena/ui/button';
-import { Badge } from '@atena/ui/badge';
 import { Pencil, Trash } from 'lucide-react';
 
 export default function CategoriesTable() {
@@ -20,9 +19,9 @@ export default function CategoriesTable() {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead style={{ width: 24 }}>ID</TableHead>
-            <TableHead style={{ width: 420 }}>Category</TableHead>
-            <TableHead style={{ width: 24 }}>Actions</TableHead>
+            <TableHead style={{ width: 400 }}>Category</TableHead>
+            <TableHead style={{ width: 24 }}>Color</TableHead>
+            <TableHead style={{ width: 12 }}>Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -45,16 +44,21 @@ interface CategoryRowProps {
   category: {
     id: number;
     title: string;
+    color: string | null;
   };
   handleDelete: (id: number) => void;
   handleEdit: (id: number) => void;
 }
 
 const CategoryRow = ({ category, handleDelete, handleEdit }: CategoryRowProps) => (
-  <TableRow key={category.id} className="font-medium text-primary outline-none h-14">
-    <TableCell>{category.id}</TableCell>
+  <TableRow key={category.id} className="font-medium text-primary text-[1.05rem] outline-none h-14">
     <TableCell>
-      <Badge>{category.title}</Badge>
+      {category.title}
+    </TableCell>
+    <TableCell>
+      {category.color ? <div className="rounded-full w-8 h-8 border" style={{
+        backgroundColor: category.color,
+      }}></div> : 'No color'}
     </TableCell>
     <TableCell className='space-x-4'>
       <Button onClick={() => handleDelete(category.id)} variant="destructive" size="icon" className='size-7'>
