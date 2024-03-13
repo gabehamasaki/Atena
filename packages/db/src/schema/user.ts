@@ -7,8 +7,7 @@ import {
   uuid,
 } from 'drizzle-orm/pg-core'
 
-import { account, category, session, } from '.'
-import { transaction } from './transaction'
+import { account, session, } from '.'
 
 export const user = pgTable(
   'users',
@@ -29,6 +28,4 @@ export const user = pgTable(
 export const userRelations = relations(user, ({ many }) => ({
   sessions: many(session),
   accounts: many(account),
-  transactions: many(transaction),
-  categories: many(category),
 }))
