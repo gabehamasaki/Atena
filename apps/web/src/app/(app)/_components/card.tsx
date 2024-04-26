@@ -6,9 +6,10 @@ interface CardProps {
   value: number;
   percentage: string;
   Icon: LucideIcon;
+  isMoney?: boolean;
 }
 
-export default function Card({ title, value, Icon, percentage }: CardProps) {
+export default function Card({ title, value, Icon, percentage, isMoney }: CardProps) {
   return (
     <CardRoot>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -18,10 +19,10 @@ export default function Card({ title, value, Icon, percentage }: CardProps) {
         <Icon className="h-4 w-4 text-muted-foreground" />
       </CardHeader>
       <CardContent>
-        <div className="text-2xl font-bold">{value.toLocaleString('en-US', {
+        <div className="text-2xl font-bold">{isMoney ? value.toLocaleString('en-US', {
           style: 'currency',
           currency: 'USD'
-        })}</div>
+        }) : value}</div>
         <p className="text-xs text-green-500">
           +{percentage}%
         </p>

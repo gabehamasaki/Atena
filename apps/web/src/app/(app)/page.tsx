@@ -16,6 +16,7 @@ export default function Dashboard() {
 			value: 9999,
 			percentage: "25",
 			Icon: DollarSign,
+			isMoney: true,
 		},
 		{
 			title: "Total Customers",
@@ -34,6 +35,7 @@ export default function Dashboard() {
 			value: 100000,
 			percentage: "50",
 			Icon: CreditCard,
+			isMoney: true,
 		},
 	];
 	return (
@@ -47,6 +49,7 @@ export default function Dashboard() {
 							value={card.value}
 							percentage={card.percentage}
 							Icon={card.Icon}
+							isMoney={card.isMoney}
 						/>
 					))}
 				</div>
