@@ -18,20 +18,20 @@
   },
   "dependencies": {
     "@atena/validators": "workspace:^",
-    "drizzle-orm": "^0.29.4",
-    "pg": "^8.11.3",
-    "postgres": "^3.4.3"
+    "drizzle-orm": "^0.29.5",
+    "pg": "^8.11.5",
+    "postgres": "^3.4.4"
   },
   "devDependencies": {
-    "@atena/eslint-config": "workspace:^0.2.0",
-    "@atena/prettier-config": "workspace:^0.1.0",
-    "@atena/tsconfig": "workspace:^0.1.0",
-    "@types/pg": "^8.11.2",
-    "dotenv-cli": "^7.3.0",
-    "drizzle-kit": "^0.20.14",
+    "@atena/eslint-config": "workspace:^",
+    "@atena/prettier-config": "workspace:^",
+    "@atena/tsconfig": "workspace:^",
+    "@types/pg": "^8.11.5",
+    "dotenv-cli": "^7.4.1",
+    "drizzle-kit": "^0.20.17",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.5"
   },
   "eslintConfig": {
     "root": true,
