@@ -39,25 +39,23 @@ export default function Dashboard() {
 		},
 	];
 	return (
-		<div className="flex min-h-screen w-full flex-col">
-			<main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
-				<div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
-					{cards.map((card, index) => (
-						<Card
-							key={index}
-							title={card.title}
-							value={card.value}
-							percentage={card.percentage}
-							Icon={card.Icon}
-							isMoney={card.isMoney}
-						/>
-					))}
-				</div>
-				<div className="grid gap-4 md:gap-8 lg:grid-cols-2 xl:grid-cols-3">
-					<Transactions />
-					<RecentSales />
-				</div>
-			</main>
+		<div className="grid items-start gap-8 p-4 sm:px-6 sm:py-0">
+			<div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
+				{cards.map((card, index) => (
+					<Card
+						key={index}
+						title={card.title}
+						value={card.value}
+						percentage={card.percentage}
+						Icon={card.Icon}
+						isMoney={card.isMoney}
+					/>
+				))}
+			</div>
+			<div className="grid gap-4 md:gap-8 lg:grid-cols-2 xl:grid-cols-3">
+				<Transactions />
+				<RecentSales />
+			</div>
 		</div>
 	)
 }

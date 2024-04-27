@@ -9,6 +9,7 @@ import { env } from "@atena/validators";
 
 import { TRPCReactProvider } from "@/trpc/react";
 import { cn } from "@atena/ui";
+import { TooltipProvider } from "@atena/ui/tooltip";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(
@@ -50,8 +51,10 @@ export default function RootLayout(props: { children: React.ReactNode }) {
 				)}
 			>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-					<TRPCReactProvider>{props.children}</TRPCReactProvider>
-					<Toaster richColors position="top-right" />
+					<TooltipProvider>
+						<TRPCReactProvider>{props.children}</TRPCReactProvider>
+						<Toaster richColors position="top-right" />
+					</TooltipProvider>
 				</ThemeProvider>
 			</body>
 		</html>

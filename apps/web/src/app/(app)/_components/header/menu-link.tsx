@@ -1,6 +1,6 @@
 import type Link from "next/link";
 import type { ComponentProps } from "react";
-import { NavLink } from "../nav-link";
+import { NavLink } from "@/components/nav-link";
 
 export default function MenuLink(props: ComponentProps<typeof Link>) {
 	return (
